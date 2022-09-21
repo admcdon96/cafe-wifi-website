@@ -1,0 +1,109 @@
+html,body,.full-height { height: 100%; }
+.height-90 { height:calc(100% - 73px); }
+
+h1, h2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: #EDEDED;
+}
+
+#cafe-body {
+    padding: 0 20% 0;
+    background-color: #EDEDED;
+
+}
+
+
+/* ================================= SCROLL BAR ================================= */
+::-webkit-scrollbar {
+width: 8px;
+height: 6px;
+}
+::-webkit-scrollbar-track {
+border-radius: 10px;
+background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb{
+border-radius: 10px;
+background: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb:hover{
+background: rgba(0,0,0,0.4);
+}
+::-webkit-scrollbar-thumb:active{
+background: rgba(0,0,0,.9);
+}
+
+/* ================================= NAVBAR ================================= */
+.header_area {
+    background-color: #87805E;
+    margin-left: calc(20% - 12px);
+    margin-right: calc(20% - 12px);
+}
+
+
+nav a {
+    color: #faf6e8 !important;
+}
+
+nav .navbar-nav li a{
+    color: #faf6e8 !important;
+}
+
+/* ================================= FILTERS ================================= */
+#filters {
+    background-color: #B09B71;
+}
+
+
+/* ================================= LOCATIONS ================================= */
+#locations {
+    background-color: #D8CCA3;
+    height: 100%;
+    overflow-y: scroll;
+
+}
+
+#locations .card {
+    width: 100%;
+    border: none;
+    --bs-card-cap-bg: rgb(0 0 0 / 0%);
+    --bs-card-bg: rgb(0 0 0 / 0%);
+    --bs-card-border-color: rgb(0 0 0 / 0%);
+    --bs-card-spacer-x: 0;
+}
+
+#locations img {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    height: 15rem;
+    width: 95%;
+
+}
+
+#city-h1 {
+    padding: 1rem;
+}
+
+
+/* ================================= MAP ================================= */
+
+#locations .card {
+    border: none;
+    --bs-card-cap-bg: rgb(0 0 0 / 0%);
+    --bs-card-bg: rgb(0 0 0 / 0%);
+    --bs-card-border-color: rgb(0 0 0 / 0%);
+}

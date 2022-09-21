@@ -1,0 +1,84 @@
+{% include "header.html" %}
+<div class="container-fluid height-90 rounded-bottom" id="cafe-body">
+    <div class="row shadow full-height" id="cafe-row">
+
+        <!--====================== Filters Area =======================-->
+
+
+        <div class="col-lg-4 col-md-4" id="filters">
+            <h2 class="px-2 col-lg-5 col-md-8" id="city-h1">Filters</h2>
+
+            <button class="btn" onclick="filterSelection('has-wifi')"> Wifi</button>
+
+        </div>
+
+        <!--====================== Details Area =======================-->
+        <div class="col-lg-8 col-md-8 shadow-lg" id="locations">
+
+            <h1 class="px-2 col-lg-5 col-md-8" id="city-h1">London</h1>
+
+            {% for cafe in all_cafes %}
+
+            <div class="card my-3" has-wifi="{{cafe.has_wifi}}" has-outlets="{{ cafe.has_sockets }}" has-restroom="{{ cafe.has_toilet }}" take-calls="{{ cafe.can_take_calls }}">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ cafe.img_url }}" class="img-fluid rounded" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ cafe.name }}</h3>
+                            <a class="card-text" href="{{ cafe.map_url }}">{{ cafe.location }}</a>
+                            <div class="row card-text mt-3">
+                                <div class="col">
+                                    <p>Coffee Price: {{ cafe.coffee_price }}</p>
+
+                                        {% if cafe.has_wifi == 1 %}
+                                    <p> Wi-Fi: Yes </p>
+                                        {% else %}
+                                    <p> Wi-Fi: No </p>
+                                        {% endif %}
+
+                                        {% if cafe.has_sockets == 1 %}
+                                    <p> Outlets: Yes </p>
+                                        {% else %}
+                                    <p> Outlets: No </p>
+                                        {% endif %}
+
+                                </div>
+                                <div class="col">
+
+                                        {% if cafe.has_toilet == 1 %}
+                                    <p> Restroom: Yes </p>
+                                        {% else %}
+                                    <p> Restroom: No </p>
+                                        {% endif %}
+
+                                    {% if cafe.can_take_calls == 1 %}
+                                    <p> Take Calls: Yes </p>
+                                        {% else %}
+                                    <p> Take Calls: No </p>
+                                        {% endif %}
+
+                                    <p>Number of Seats: {{ cafe.seats }}</p>
+                                </div>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            {% endfor %}
+
+
+
+        </div>
+
+
+        <!--====================== Map Area =======================-->
+
+
+    </div>
+</div>
+</body>
+

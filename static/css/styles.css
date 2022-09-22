@@ -1,4 +1,4 @@
-html,body,.full-height { height: 100%; }
+html,body,.full-height { height: calc(100% - 16px); }
 .height-90 { height:calc(100% - 73px); }
 
 h1, h2 {
@@ -21,12 +21,14 @@ body {
 }
 
 #cafe-body {
-    padding: 0 20% 0;
+    padding: 1rem 20% 0;
     background-color: #EDEDED;
-
 }
 
-
+.w-center {
+    margin: auto;
+    width: 50%;
+}
 /* ================================= SCROLL BAR ================================= */
 ::-webkit-scrollbar {
 width: 8px;
@@ -52,6 +54,7 @@ background: rgba(0,0,0,.9);
     background-color: #87805E;
     margin-left: calc(20% - 12px);
     margin-right: calc(20% - 12px);
+    margin-top: 1rem;
 }
 
 
@@ -99,11 +102,30 @@ nav .navbar-nav li a{
 }
 
 
-/* ================================= MAP ================================= */
+/* ================================= LOGIN ================================= */
 
-#locations .card {
-    border: none;
-    --bs-card-cap-bg: rgb(0 0 0 / 0%);
-    --bs-card-bg: rgb(0 0 0 / 0%);
-    --bs-card-border-color: rgb(0 0 0 / 0%);
+#login-box {
+    padding: 1rem 20% 0;
 }
+
+#login-logo {
+    padding-top: 10%;
+    margin-bottom: 15%;
+}
+
+#login-form {
+    margin-bottom: 3%;
+}
+
+#form-body {
+    margin: auto;
+    width: 80%;
+    height: 50%;
+    text-align: middle;
+}
+
+
+
+
+
+

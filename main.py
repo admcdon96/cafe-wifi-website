@@ -1,20 +1,15 @@
 from datetime import date
-from functools import wraps
 
 from flask import Flask, render_template, redirect, url_for, flash, request
-from flask import abort
 from flask_bootstrap import Bootstrap
 from flask_ckeditor import CKEditor
 from flask_gravatar import Gravatar
-from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from forms import RegisterForm, LoginForm, AddCafeForm
-
-import os
 
 # ----------------------- FLASK CONFIG ------------------- #
 app = Flask(__name__)
@@ -27,9 +22,11 @@ Base = declarative_base()
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 # Gravatar Config
 gravatar = Gravatar(app,
@@ -64,6 +61,7 @@ class Cafe(db.Model):
     coffee_price = db.Column(db.String(250), nullable=True)
     date = db.Column(db.String(250), nullable=False)
 
+
 class User(UserMixin, db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
@@ -83,11 +81,12 @@ def home():
     cafes = db.session.query(Cafe).all()
     return render_template("index.html", all_cafes=cafes)
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
     if request.method == "POST":
-    # if form.validate_on_submit():
+        # if form.validate_on_submit():
 
         # Check if user already exists > direct to log in
         if User.query.filter_by(email=form.email.data).first():
@@ -113,6 +112,7 @@ def register():
 
     return render_template("register.html", form=form)
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -137,11 +137,13 @@ def login():
 
     return render_template("login.html", form=form)
 
+
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
 
 @app.route("/new-cafe", methods=['GET', 'POST'])
 def add_new_cafe():

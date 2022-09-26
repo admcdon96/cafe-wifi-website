@@ -1,0 +1,142 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header.html" %}
+
+<div class="container-fluid" id="login-box" xmlns="http://www.w3.org/1999/html">
+
+  <div class="row d-flex justify-content-center align-items-center">
+
+    <div class="card shadow">
+
+      <div class="row d-flex justify-content-center align-items-center">
+
+        <div class="row g-0">
+          <div class="col-md-6 col-lg-5 d-none d-md-block">
+            <img src="{{ url_for('static', filename='img/coffee-bg.jpg') }}" class="img-fluid rounded-start" alt="...">
+          </div>
+
+          <div class="col-md-6 col-lg-7 align-items-center">
+            <div class="card-body" id="form-body">
+
+              <div class="card-body" id="add-form">
+
+                <div class="row">
+
+                  <div class="col">
+
+                    <div class="form-outline">
+                      <h2 class="pt-3">ADD NEW PLACE</h2>
+                      <h5 class="fw-normal mb-3 pb-4" id="add-header">A New Work-Friendly Venue? Let freelancers, digital nomads, and other remote workers know about a new work-friendly venue!</h5>
+                    </div>
+                  </div>
+
+                  <!-- START FORM -->
+                  <form action="" method="post" novalidate>
+
+                    {{ form.name.label(class="form-label") }}
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i> </span>
+                      {{ form.name(class="form-control") }}
+                    </div><!-- form-group// -->
+
+                    {{ form.location.label(class="form-label") }}
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-pin"></i></span>
+                      {{ form.location(class="form-control") }}
+                    </div><!-- form-group// -->
+
+                    {{ form.map_url.label(class="form-label") }}
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-map"></i> </span>
+                      {{ form.map_url(class="form-control") }}
+                    </div><!-- form-group// -->
+
+                    {{ form.img_url.label(class="form-label") }}
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-image"></i> </span>
+                      {{ form.img_url(class="form-control") }}
+                    </div><!-- form-group// -->
+
+
+                    <div class="row pt-3">
+
+                      <div class="col me-2">
+                        {{ form.has_wifi.label(class="form-label") }}
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-wifi"></i> </span>
+                          {{ form.has_wifi(class="form-control") }}
+                        </div><!-- form-group// -->
+                      </div>
+
+                      <div class="col me-2">
+                        {{ form.has_sockets.label(class="form-label") }}
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-plug"></i> </span>
+                          {{ form.has_sockets(class="form-control") }}
+                        </div><!-- form-group// -->
+                      </div>
+
+                      <div class="col">
+                        {{ form.can_take_calls.label(class="form-label") }}
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-phone"></i> </span>
+                          {{ form.can_take_calls(class="form-control") }}
+                        </div><!-- form-group// -->
+                      </div>
+
+                    </div>
+
+                    <div class="row pt-3">
+
+                      <div class="col me-2">
+                        {{ form.coffee_price.label(class="form-label") }}
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-euro-sign"></i> </span>
+                          {{ form.coffee_price(class="form-control") }}
+                        </div><!-- form-group// -->
+                      </div>
+
+                      <div class="col me-2">
+                        {{ form.seats.label(class="form-label") }}
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-chair"></i> </span>
+                          {{ form.seats(class="form-control") }}
+                        </div><!-- form-group// -->
+                      </div>
+
+                      <div class="col">
+                        {{ form.has_toilet.label(class="form-label") }}
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-toilet"></i> </span>
+                          {{ form.has_toilet(class="form-control") }}
+                        </div><!-- form-group// -->
+                      </div>
+
+                      <div class="row pt-3">
+
+                        <div class="col">
+                          <!-- Submit input -->
+                          <div class="form-outline">
+                            {{ form.submit(class="btn btn-dark form-control form-control-lg", size=100) }}
+                          </div>
+                        </div>
+
+
+                      </div>
+
+
+                      <!-- END FORM -->
+                  </form>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock %}

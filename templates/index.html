@@ -6,7 +6,7 @@
         <!--====================== Filters Area =======================-->
 
 
-        <div class="col-lg-4 col-md-4" id="filters">
+        <div class="col-lg-4 col-md-4 rounded-start" id="filters">
             <h2 class="px-2 col-lg-5 col-md-8" id="city-h1">Filters</h2>
 
             <button class="btn" onclick="filterSelection('has-wifi')"> Wifi</button>
@@ -14,7 +14,7 @@
         </div>
 
         <!--====================== Details Area =======================-->
-        <div class="col-lg-8 col-md-8 shadow-lg" id="locations">
+        <div class="col-lg-8 col-md-8 shadow-lg rounded-end" id="locations">
 
             <h1 class="px-2 col-lg-5 col-md-8" id="city-h1">London</h1>
 
@@ -63,7 +63,7 @@
                                     <p>Number of Seats: {{ cafe.seats }}</p>
                                 </div>
                             </div>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text"><small class="text-muted">Added on {{ cafe.date }}</small></p>
                         </div>
                     </div>
                 </div>

@@ -109,8 +109,8 @@ nav .navbar-nav li a{
 }
 
 #login-logo {
-    padding-top: 10%;
-    margin-bottom: 15%;
+    padding-top: 15%;
+    margin-bottom: 10%;
 }
 
 #login-form {
@@ -119,13 +119,37 @@ nav .navbar-nav li a{
 
 #form-body {
     margin: auto;
-    width: 80%;
-    height: 50%;
+    width: 70%;
+    height: 100%;
+    text-align: middle;
+}
+
+#form-button {
+    margin: auto;
+    width: 70%;
+    height: 100%;
     text-align: middle;
 }
 
 
+#register-logo {
+    padding-top: 10%;
+    margin-bottom: 10%;
+}
+
+/* ================================= ADD CAFE ================================= */
+#add-form {
+    margin: auto;
+    width: 85%;
+    height: 100%;
+    text-align: middle;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
 
 
 
-
+.form-label {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+}

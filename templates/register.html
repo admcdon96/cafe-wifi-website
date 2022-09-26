@@ -19,26 +19,23 @@
           <div class="col-md-6 col-lg-7 align-items-center">
             <div class="card-body" id="form-body">
 
-              <div class="d-flex align-items-center pb-1" id="login-logo">
+              <div class="d-flex align-items-center pb-1" id="register-logo">
                 <img class="me-3 mb-1" src="{{url_for('static', filename='img/logo.png')}}" alt="" width="55" height="52"></a>
                 <h1>Cafe & Wifi</h1>
               </div>
 
 
 
-              <h2 class="mb-3 pb-1">Welcome Back!</h2>
+              <h2 class="mb-3 pb-1">Welcome!</h2>
 
               <form action="" method="post" novalidate>
-                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
-                  {% with messages = get_flashed_messages() %}
-                  {% if messages %}
-                  {% for message in messages %}
-                  {{ message }}
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create your account</h5>
 
+                <div class="form-outline mb-4">
+                  {{ form.name.label(class="form-label") }}
+                  {{ form.name(class="form-control form-control-lg") }}
+                </div>
 
-                  {% endfor %}
-                  {% endif %}
-                  {% endwith %}
                 <div class="form-outline mb-4">
                   {{ form.email.label(class="form-label") }}
                   {{ form.email(class="form-control form-control-lg") }}
@@ -53,10 +50,6 @@
                   {{ form.submit(class="btn btn-dark form-control form-control-lg", size=100) }}
                 </div>
 
-                <a class="small text-muted" href="#!">Forgot password?</a>
-                <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!" style="color: #393f81;">Register here</a></p>
-                <a href="#!" class="small text-muted">Terms of use.</a>
-                <a href="#!" class="small text-muted">Privacy policy</a>
               </form>
 
             </div>
